@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oxeenn0 - 前端作品集</title>
+  <meta name="description" content="個人前端實驗作品存放區，不定期更新。">
+  <meta name="robots" content="follow,index">
+  <link rel="stylesheet" href="styles/oxeenn.css">
+  <link rel="icon" href="images/oxeenn0TitleIcon.ico">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div id="container">
+
+    <header id="header">
+      <div class="LOGO">Oxeenn<span>0</span></div>
+      <div class="menu">
+        <ul class="menu-group">
+          <li class="menu-item">
+            <p id="gofooter">聯繫</p>
+          </li>
+        </ul>
+      </div>
+    </header>
+    
+    <main id="main">
+      <section id="works" :class="[moreWorksAnime ? 'more-works-anime' : '', moreWork ? 'more-works' : '']">
+        <div class="works-group" v-for="works in worksDatadisplay" :key="works.id">
+          <div class="works-item">
+            <a :href="works.url" target="_blank">
+              <img :src="works.img" alt="網頁作品">
+            </a>
+            <div class="works-content">
+              <div class="works-title">{{works.title}}</div>
+              <div class="works-description">{{works.description}}</div>
+            </div>
+          </div>
+          <div class="works-tag-group">
+            <button class="works-tag-item" v-for="(tag, index) in works.tag" :key="index" v-on:click="tagSearch(tag)"
+              :disabled="disabled">{{tag}}</button>
+          </div>
+        </div>
+
+      </section>
+      <div class="morebutton-section">
+        <button class="morebutton" v-on:click="clearMoreWorkAnime(false)"
+          :disabled="disabled">{{moreButtonName}}</button>
+      </div>
+    </main>
+
+    <footer id="footer">
+      <div class="contact">
+        <h2>聯絡我</h2>
+        <div class="link-group">
+          <div class="link-item"><a id="email" href="mailto:ouxiufeng@outlook.com"><span class="material-icons">email</span></a></div>
+          <div class="link-item"><a id="github" href="https://github.com/ouxiufeng" target="_blank"><img id="github-icon" src="images/github.svg" alt="github"></a></div>
+        </div>
+        <p></p>
+      </div>
+    </footer>
+
+    <div id="goheader"><img src="images/gotopIcon.svg" alt="gotopIcon"></div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+  <script src="scripts/oxeenn.js"></script>
+</body>
+
+</html>

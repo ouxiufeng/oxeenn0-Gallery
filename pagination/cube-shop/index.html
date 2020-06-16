@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cube Shop</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+  <div id="container">
+
+    <section id="bgc-item-group">
+      <div class="bgc-item"><span class="material-icons notranslate">crop_square</span></div>
+      <div class="bgc-item"><span class="material-icons notranslate">crop_square</span></div>
+      <div class="bgc-item"><span class="material-icons notranslate">crop_square</span></div>
+      <div class="bgc-item"><span class="material-icons notranslate">crop_square</span></div>
+      <div class="bgc-item"><span class="material-icons notranslate">crop_square</span></div>
+      <div class="bgc-item"><span class="material-icons notranslate">crop_square</span></div>
+      <div class="bgc-item"><span class="material-icons notranslate">crop_square</span></div>
+      <div class="bgc-item"><span class="material-icons notranslate">crop_square</span></div>
+    </section>
+
+    <header id="header">
+      <div id="mask">
+        <h2 id="mask-title">
+          <span class="left-area">CUBE</span>
+          <span class="right-area">SHOP</span>
+        </h2>
+      </div>
+      <nav id="menu" class="">
+        <ul id="list">
+          <a href="#">
+            <li class="list-item">主頁</li>
+            <div class="hover-block1"></div>
+            <div class="hover-block2"></div>
+          </a>
+          <a href="#/commoditylist">
+            <li class="list-item">方塊</li>
+            <div class="hover-block1"></div>
+            <div class="hover-block2"></div>
+          </a>
+          <a href="#/commoditylist">
+            <li class="list-item">方塊！</li>
+            <div class="hover-block1"></div>
+            <div class="hover-block2"></div>
+          </a>
+          <a href="#/about">
+            <li class="list-item">關於</li>
+            <div class="hover-block1"></div>
+            <div class="hover-block2"></div>
+          </a>
+        </ul>
+      </nav>
+      <div id="logo-border" class=""></div>
+      <div id="logo">
+        <div class="side logoForward"></div>
+        <div class="side logoBack"></div>
+        <div class="side logoLeft"></div>
+        <div class="side logoRight"></div>
+        <div class="side logoBottom"></div>
+        <div class="side logoTop"></div>
+      </div>
+
+    </header>
+
+    <main id="main">
+      <section id="cubeshop-introduction">
+        <h2 class="introduction-title">CUBE SHOP</h2>
+        <h3 class="introduction-content">最齊全的方塊聚集地。</h3>
+      </section>
+
+      <section id="more-cube">
+        <div id="left-panel"></div>
+        <div id="right-panel">
+          <h2 class="main-content">尋找你想要的方塊。</h2>
+          <a href="#/commoditylist">
+            <div class="goto-commoditylist">現在前往</div>
+            <div class="hover-block1"></div>
+            <div class="hover-block2"></div>
+          </a>
+        </div>
+      </section>
+
+      <section id="commoditylist">
+        <div class="row">
+          <div class="commodity">
+            <div class="commodity-show">
+              <button class="commodity-buy notranslate"><span class="material-icons">add_shopping_cart</span></button>
+            </div>
+            <div class="commodity-name">Cube C128-A</div>
+            <div class="commodity-price">$500</div>
+          </div>
+          <div class="commodity">
+            <div class="commodity-show">
+              <button class="commodity-buy notranslate"><span class="material-icons">add_shopping_cart</span></button>
+            </div>
+            <div class="commodity-name">Cube C128-B</div>
+            <div class="commodity-price">$350</div>
+          </div>
+          <div class="commodity">
+            <div class="commodity-show">
+              <button class="commodity-buy notranslate"><span class="material-icons">add_shopping_cart</span></button>
+            </div>
+            <div class="commodity-name">Cube C128-C</div>
+            <div class="commodity-price">$200</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="commodity">
+            <div class="commodity-show">
+              <button class="commodity-buy notranslate"><span class="material-icons">add_shopping_cart</span></button>
+            </div>
+            <div class="commodity-name">Cube C128-D</div>
+            <div class="commodity-price">$500</div>
+          </div>
+          <div class="commodity">
+            <div class="commodity-show">
+              <button class="commodity-buy notranslate"><span class="material-icons">add_shopping_cart</span></button>
+            </div>
+            <div class="commodity-name">Cube C128-E</div>
+            <div class="commodity-price">$350</div>
+          </div>
+          <div class="commodity">
+            <div class="commodity-show">
+              <button class="commodity-buy notranslate"><span class="material-icons">add_shopping_cart</span></button>
+            </div>
+            <div class="commodity-name">Cube C128-F</div>
+            <div class="commodity-price">$200</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="checkout">
+        <div class="colname">
+          <div class="col-name">名稱</div>
+          <div class="col-price">價格</div>
+          <div class="col-num">數量</div>
+        </div>
+
+        <div id="bottom-panel">
+          <div id="button-group">
+            <button id="clear-button"><span class="material-icons notranslate">delete_outline</span></button>
+            <button id="undo-button"><span class="material-icons notranslate">undo</span></button>
+          </div>
+          <div id="total-price">
+            <div class="title">總額: </div>
+            <div class="price">0</div>
+          </div>
+          <button id="buy-button">BUY</button>
+
+
+        </div>
+
+        <div class="item-group"></div>
+
+      </section>
+
+      <div id="buy-success">購買完成！</div>
+
+      <a href="#/commoditylist/checkout" id="shopping-cart">
+        <span class="material-icons notranslate">add_shopping_cart</span>
+        <div id="buy-counter">0</div>
+      </a>
+
+      <section id="about">
+        <h2 id="about-title">關於</h2>
+        <h3 id="author">作者： Oxeenn0</h3>
+        <h3 id="goto-mainpage">
+          <a href="https://oxeenn0.com">前往 Oxeenn0</a>
+          <div class="hover-block1"></div>
+          <div class="hover-block2"></div>
+        </h3>
+        <button id="about-undo-button"><span class="material-icons notranslate">undo</span></button>
+      </section>
+    </main>
+
+
+    <div id="sign">
+      <div class="left-mask"></div>
+      <div class="right-mask"></div>
+
+    </div>
+
+  </div>
+
+  <script src="scripts/three/build/three.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+  <script src="scripts/declared-table.js"></script>
+  <script src="scripts/main.js"></script>
+  <script src="scripts/routing.js"></script>
+
+</body>
+
+</html>

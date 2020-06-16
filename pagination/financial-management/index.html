@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Financial Management</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="styles/financial-management.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="mask"></div>
+    <aside class="aside">
+      <section class="main-info">
+        <div class="main-info-title">
+          <h2>理財</h2>
+        </div>
+        <div class="main-info-content">
+          <div class="info-item">
+            <div class="info-item-content">
+              <div class="info-item-icon">
+                <span class="material-icons notranslate">attach_money</span>
+              </div>
+              <div class="info-item-name">
+                <h3>收入</h3>
+              </div>
+            </div>
+
+            <div class="info-item-value">
+              <p>{{totalIncome}}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="main-info-content">
+          <div class="info-item">
+            <div class="info-item-content">
+              <div class="info-item-icon">
+                <span class="material-icons notranslate">money_off</span>
+              </div>
+              <div class="info-item-name">
+                <h3>支出</h3>
+              </div>
+            </div>
+
+            <div class="info-item-value">
+              <p class="red">{{totalExpenditure}}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <nav class="main-nav">
+        <ul class="list-group">
+          <li class="list-item"><a class="router" href="#/list">清單</a></li>
+          <li class="list-item"><a class="router" href="#/statistics">統計</a></li>
+          <li class="list-item"><a class="router" href="#/about">關於</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="workstation start">
+
+      <div class="card-group">
+        <div class="card-item" v-for="item in baseSource" :key="item.id" v-on:click="openOddData(item)"
+          v-if="item.invisible == false">
+          <div class="card-item-bar" :class="item.changeStatus ? 'redbar' : ''"></div>
+
+          <div class="card-item-top">
+            <div class="card-item-type">
+              <h3 class="main-type">{{item.mainType.substring(0, 3)}}</h3>
+              <h4 class="son-type">{{item.sonType.substring(0, 4)}}</h4>
+            </div>
+            <h3 class="card-item-title">{{item.title.substring(0, 10)}}</h3>
+            <div class="card-item-date">
+              <h3 class="date">{{item.date}}</h3>
+              <h4 class="time">{{item.time}}</h4>
+            </div>
+            <h3 class="card-item-price"><span>$<span>{{substringjudgment(item.price)}}</h3>
+          </div>
+          <div class="card-item-description">
+            <p class="text">{{item.content}}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="new-card" :class="addButtonSwitch ? 'new-card-open' : ''">
+        <div class="new-card-mask"></div>
+        <div class="new-card-bar" :class="newChangeStatus ? 'bar-red' : 'bar-green'"></div>
+
+        <div class="new-card-date">
+          <h3>日期</h3>
+          <div class="datetime">
+            <input id="dateItem" type="date" v-model="newDate">
+            <input id="timeItem" type="time" v-model="newTime">
+          </div>
+        </div>
+
+        <div class="new-card-title">
+          <h3>標題</h3>
+          <input id="titleItem" type="text" v-model="newTitle">
+        </div>
+        <div class="new-card-type">
+          <div class="main-type">
+            <h3>類別</h3>
+            <button
+              v-on:click="[toggleAddButtonSwitch(), readOddData = false, clearTemporaryStorageData(), settingCardButton = true]">+</button>
+            <div class="select-main-type" v-on:click="[openMask(), onMaintype(), typelistjudgment()]">
+              <h4 class="select-item">{{selectItem}}</h4>
+
+              <div class="main-type-group"
+                :class="[typelistSwitch ? 'type-group-open' : '', typelistScrollSwitch ? 'scrollbarOpen' : '']">
+                <div class="main-type-list" v-for="item in typeSource" :key="item.id"
+                  v-on:click="[selectItem = item.main, soutypeSource = item.son, selectSonItem = '']">{{item.main}}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="son-type">
+            <h3>子類別</h3>
+            <div class="select-son-type" v-if="(soutypeSource.length != 0)"
+              v-on:click="[openMask(), onSonType(), typelistjudgment()]">
+              <h4 class="select-item">{{selectSonItem}}</h4>
+              <div class="son-type-group"
+                :class="[sontypelistSwitch ? 'type-group-open' : '', sontypelistScrollSwitch ? 'scrollbarOpen' : '']">
+                <div class="son-type-list" v-for="(item, index) in soutypeSource" :key="index"
+                  v-on:click="selectSonItem = item">{{item}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="new-card-method">
+          <h3>方法</h3>
+          <div class="select-card-method" v-on:click="[openMask(), onMethod(), typelistjudgment()]">
+            <h4 class="select-item">{{selectMethod}}</h4>
+            <div class="main-method-group"
+              :class="[methodlistSwitch ? 'method-group-open' : '', methodlistScrollSwitch ? 'scrollbarOpen' : '']">
+              <div class="main-method-list" v-for="item in methodSource" :key="item.id"
+                v-on:click="selectMethod = item.meth">{{item.meth}}</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="new-card-price">
+          <h3>金額</h3>
+          <input id="priceItem" type="number" step="10" v-model="newPrice">
+        </div>
+
+        <div class="new-card-content">
+          <h3>內容</h3>
+          <textarea id="contentItem" cols="30" rows="10" v-model="newContent"></textarea>
+        </div>
+
+        <div class="new-card-control">
+          <div class="control-left">
+            <button class="incomeButton" v-on:click="newChangeStatus = false"><span
+                class="material-icons notranslate">attach_money</span></button>
+            <button class="expenditureButton" v-on:click="newChangeStatus = true"><span
+                class="material-icons notranslate">money_off</span></button>
+          </div>
+          <div class="control-right">
+            <button class="saveButton" v-on:click="[toggleAddButtonSwitch(), saveData()]"><span
+                class="material-icons notranslate">check</span></button>
+            <button class="cancelButton"
+              v-on:click="[toggleAddButtonSwitch(), readOddData = false, clearTemporaryStorageData()]"><span
+                class="material-icons notranslate">close</span></button>
+
+            <button class="removeButton" v-if="readOddData"
+              v-on:click="[toggleAddButtonSwitch(), deleteData(), clearTemporaryStorageData()]"><span
+                class="material-icons">delete</span></button>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="setting-type-card" :class="settingCardButton ? 'type-card-open' : ''">
+        <div class="type-group">
+          <h3>類別</h3>
+          <button class="addType" v-on:click="addType()">+</button>
+          <button class="removeType" v-on:click="removeType()">-</button>
+          <div class="type-item">
+            <input type="text" class="item" v-for="item in typeSource" :key="item.id" v-on:click="[getSonType(item.son, item.id), selectType = true]" v-model="item.main" :value="item.main">
+          </div>
+        </div>
+        <div class="type-group">
+          <h3>子類別</h3>
+          <button class="addType" v-if="selectType" v-on:click="addsonType()">+</button>
+          <button class="removeType" v-if="selectType" v-on:click="removesonType()">-</button>
+          <div class="type-item">
+            <input type="text" class="item" v-for="(item, index) in nowTypeSource" v-on:click="getsonType(index)" v-model="nowTypeSource[index]" :value="item">
+          </div>
+        </div>
+        <div class="type-group">
+          <h3>方法</h3>
+          <button class="addType" v-on:click="addMethod()">+</button>
+          <button class="removeType" v-on:click="removeMethod()">-</button>
+          <div class="type-item">
+            <input type="text" class="item" v-for="(item, index) in methodSource" :key="item.id"  v-on:click="getMethodId(index)" v-model="item.meth" :value="item.meth">
+          </div>
+        </div>
+        <div class="setting-type-control">
+          <button class="saveButton" v-on:click="clearList()"><span class="material-icons notranslate">check</span></button>
+        </div>
+      </div>
+
+      <div class="addButton">
+        <button
+          v-on:click="[toggleAddButtonSwitch(), readOddData = false, clearTemporaryStorageData(), newAddDatetime()]">+</button>
+      </div>
+
+      <div class="filterdateButton">
+        <button class="forwardButton" v-on:click="getLastMonth"><span
+            class="material-icons">keyboard_arrow_left</span></button>
+        <div class="display">
+          <p>{{nowDate}}</p>
+        </div>
+        <button class="backwardButton" v-on:click="getNextMonth"><span
+            class="material-icons">keyboard_arrow_right</span></button>
+        <button class="selectDateButton" v-on:click="changeDate()"><span
+            class="material-icons">calendar_today</span></button>
+      </div>
+
+    </main>
+
+    <main class="workstation-statistics">
+
+      <div class="statistics-group">
+        <div class="statistics-table">
+          <div class="filter-main-price">總支出: {{filterMainPrice}}</div>
+          <div class="filter-price" v-for="(item, index) in filterType" :key="index">{{item}}: {{filterPrice[index]}}
+          </div>
+          <hr>
+        </div>
+
+        <div class="statisticsView-container">
+          <canvas id="statisticsView" width="400" height="400"></canvas>
+        </div>
+      </div>
+      <div class="statistics-group">
+        <div class="statistics-table">
+          <div class="filter-main-price">總收入: {{filterMainIncomePrice}}</div>
+          <div class="filter-price" v-for="(item, index) in filterTypeIncome" :key="index">{{item}}:
+            {{filterPriceIncome[index]}}</div>
+          <hr>
+        </div>
+
+        <div class="statisticsView-container">
+          <canvas id="statisticsViewIncome" width="400" height="400"></canvas>
+        </div>
+      </div>
+
+      <div class="filterdateButton">
+        <button id="filterForwardButton" class="forwardButton" v-on:click="getLastMonth"><span
+            class="material-icons">keyboard_arrow_left</span></button>
+        <div class="display">
+          <p>{{nowDate}}</p>
+        </div>
+        <button id="filterBackwardButton" class="backwardButton" v-on:click="getNextMonth"><span
+            class="material-icons">keyboard_arrow_right</span></button>
+        <button id="filterChangeDateButton" class="selectDateButton" v-on:click="changeDate()"><span
+            class="material-icons">calendar_today</span></button>
+      </div>
+    </main>
+
+    <main class="workstation-about">
+      <h3 class="author-title">作者</h3>
+      <h3 class="author">Oxeenn0</h3>
+      <div class="website"><a href="https://oxeenn0.com">前往</a></div>
+    </main>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <script src="scripts/financial-management.js"></script>
+  <script src="scripts/financial-management-routing.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Waterfall</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/layout-waterfall.css">
+</head>
+<body>
+  <div id="container">
+    <header id="header">
+      <h1 class="header-title">Waterfall</h1>
+    </header>
+
+    <main id="waterfall">
+
+      <section class="img-group" v-for="item in page">
+        <div class="img-group-A">
+          <div class="img-block">
+            <div class="big-img-item"><img></div>
+          </div>
+  
+          <div class="img-block">
+            <div class="img-item"><img></div>
+            <div class="img-item"><img></div>
+            <div class="img-item"><img></div>
+            <div class="img-item"><img></div>
+          </div>
+  
+        </div>
+        <div class="img-group-B">
+          <div class="img-block">
+            <div class="img-item"><img></div>
+            <div class="img-item"><img></div>
+            <div class="img-item"><img></div>
+            <div class="img-item"><img></div>  
+          </div>
+          
+          <div class="img-block">
+            <div class="big-img-item"><img></div>
+          </div>
+  
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+  <script src="scripts/layout-waterfall.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community site</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+  <link rel="stylesheet" href="styles/layout-community-site.css">
+</head>
+<body>
+  <div id="container">
+    <header id="header">
+      <div class="bgc-wall">
+      </div>
+      <div class="info-bar">
+        <ul>
+          <li><a href="#">Introduction</a></li>
+          <li><a href="#">Timeline</a></li>
+          <li><a href="#">Photos</a></li>
+          <li><a href="#">Friends</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">More</a></li>
+        </ul>
+      </div>
+      <div class="avatar-block">
+        <div class="avatar"></div>
+        <div class="user-name">Feng</div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section id="main-top">
+        <div class="introduction">
+          <div class="title">Introduction</div>
+          <div class="content">
+            <div class="content-item residence">
+              <div class="icon"><span class="material-icons notranslate">home</span></div>
+              <div class="text">Lives in Kaohsiung, Taiwan</div>
+            </div>
+            <div class="content-item work">
+              <div class="icon"><span class="material-icons notranslate">work</span></div>
+              <div class="text">Self-employed</div>
+            </div>
+            <div class="content-item education">
+              <div class="icon"><span class="material-icons notranslate">school</span></div>
+              <div class="text">unfilled</div>
+            </div>
+            <div class="content-item birthday">
+              <div class="icon"><span class="material-icons notranslate">cake</span></div>
+              <div class="text">1996/11/27</div>
+            </div>
+
+          </div>
+        </div>
+        <div class="release">
+          <div class="release-middle">
+            <textarea id="release-textarea" placeholder="Input your thoughts..." spellcheck="false" v-model="textareaStr"></textarea>
+          </div>
+          <div class="release-bottom">
+            <div class="button-group">
+              <button class="upload-done-button" v-on:click="clearTextarea"><span class="material-icons notranslate">done</span></button>
+              <button class="upload-img-button"><span class="material-icons notranslate">add_photo_alternate</span></button>
+              <button class="upload-movie-button"><span class="material-icons notranslate">movie</span></button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="main-body">
+        <div class="timeline">
+          <div class="timeline-top">
+            <div class="avatar"></div>
+            <div class="user-name">Feng</div>
+            <div class="date">2020/02/25 AM 01:34</div>          
+          </div>
+          <div class="timeline-middle">
+            <div class="content">Nice day, share the beauty with you.</div>
+            <div class="free-panel">
+              <img src="https://picsum.photos/400/600?random=13" alt="">
+              <div class="img-group">
+                <img src="https://picsum.photos/400/600?random=14" alt="">
+                <img src="https://picsum.photos/400/600?random=15" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="timeline-bottom">
+            <div class="button-group">
+              <button class="favorite-button" v-if="!favoriteSwitch" v-on:click="favoriteChange"><span class="material-icons notranslate">favorite_border</span></button>
+              <button class="favorite-button" v-if="favoriteSwitch" v-on:click="favoriteChange"><span class="material-icons notranslate">favorite</span></button>
+              <button class="comment-button"><span class="material-icons notranslate">comment</span></button>
+              <button class="share-button"><span class="material-icons notranslate">share</span></button>
+            </div>
+
+            <div class="favorite-content">like: {{likeCounter}}</div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <aside id="friends-list">
+      <div class="list-top">Friends</div>
+      <div class="list-middle">
+        <list class="list-group">
+          <div class="list-item" v-for="item in friendsData" :key="friendsData.id">
+            <div class="friend-avatar" :style="friendAvatarStyle(item)" ></div>
+            <div class="friend-name">{{item.name}}</div>
+          </div>
+        </list>
+      </div>
+      <div class="list-bottom">
+        <div class="button-group">
+          <button class="add-button"><span class="material-icons notranslate">add</span></button>
+        </div>
+        <div class="search">
+          <input class="search-bar" type="text" placeholder="Search..." spellcheck="false">
+          <button class="search-button"><span class="material-icons notranslate">search</span></button>
+        </div>
+      </div>
+      
+    </aside>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script src="scripts/layout-community-site.js"></script>
+  </div>
+</body>
+</html>
