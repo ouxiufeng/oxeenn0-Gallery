@@ -1,0 +1,25 @@
+body {
+  margin: 0 auto;
+  max-width: 1600px;
+}
+
+*,
+*::before,
+*::after {
+  position: relative;
+  box-sizing: border-box;
+  vertical-align: middle;
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    sans-serif, "Microsoft JhengHei";
+}
+
+::selection {
+  color: #fff;
+  background-color: #49c8cc;
+}
+
+h3,
+h4,
+p {
+  margin: 0;
+}

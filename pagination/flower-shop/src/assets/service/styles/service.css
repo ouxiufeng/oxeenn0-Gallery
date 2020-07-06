@@ -1,0 +1,132 @@
+.service-form {
+  margin-left: 40px;
+  padding: 0 10px;
+  border-left: 1px solid #eee;
+  width: 700px;
+}
+
+.service-form .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.service-form .row .f-title {
+  font-size: 28px;
+  letter-spacing: 3px;
+  margin: 5px 0;
+}
+
+.service-form .row .f-content {
+  font-size: 24px;
+  padding: 7px;
+  border: 1px solid #555;
+  outline: none;
+  -webkit-transition: all .2s 0s ease;
+  transition: all .2s 0s ease;
+}
+
+.service-form .row .f-content:focus {
+  background-color: #555;
+  outline: 2px solid #4968cc;
+  color: #fff;
+}
+
+.service-form .row .gender-group {
+  font-size: 24px;
+}
+
+.service-form .row .gender-group .gender-input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #4968cc;
+  -webkit-transition: 0.2s all linear;
+  transition: 0.2s all linear;
+  outline: none;
+  margin-right: 5px;
+}
+
+.service-form .row .gender-group .gender-input:checked {
+  border: 3px solid #4968cc;
+}
+
+.service-form .row .gender-group .gender-input:checked::before {
+  content: "";
+  width: 1px;
+  height: 1px;
+  background-color: #4968cc;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 50%;
+  -webkit-animation: checkedAnime .2s ease 0s 1 normal both;
+          animation: checkedAnime .2s ease 0s 1 normal both;
+}
+
+@-webkit-keyframes checkedAnime {
+  100% {
+    -webkit-transform: translate(-50%, -50%) scale(8);
+            transform: translate(-50%, -50%) scale(8);
+  }
+}
+
+@keyframes checkedAnime {
+  100% {
+    -webkit-transform: translate(-50%, -50%) scale(8);
+            transform: translate(-50%, -50%) scale(8);
+  }
+}
+
+.service-form .row .submit-btn {
+  width: 120px;
+  height: 50px;
+  margin: 0 auto;
+  border: none;
+  outline: none;
+  margin-top: 70px;
+  -webkit-box-shadow: 1px 1px 5px #999;
+          box-shadow: 1px 1px 5px #999;
+  background-color: #4d9aff;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.service-form .row .submit-btn:hover {
+  -webkit-filter: saturate(50%);
+          filter: saturate(50%);
+}
+
+.google-map {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 500px;
+}
+
+.google-map-item {
+  -webkit-box-shadow: 0 0 15px #555;
+          box-shadow: 0 0 15px #555;
+}
+
+@media screen and (max-width: 1024px) {
+  .connection .service-form {
+    margin-left: 0;
+    width: auto;
+  }
+}
+/*# sourceMappingURL=service.css.map */

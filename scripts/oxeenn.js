@@ -49,6 +49,14 @@ addEventListener("scroll", function () {
 let worksdata = [
   {
     id: 1,
+    url: "pagination/flower-shop/dist/index.html",
+    img: "images/website-images/flower-shop-img.png",
+    title: "花店",
+    description: "電商平台",
+    tag: ["電商", "Vue CLI", "RWD", "anime.js", "Swiper", "Masonry"]
+  },
+  {
+    id: 2,
     url: "pagination/cube-shop/index.html",
     img: "images/website-images/cube-shop-img.png",
     title: "方塊商店",
@@ -56,7 +64,7 @@ let worksdata = [
     tag: ["動畫", "過渡", "RWD", "anime.js", "three.js"]
   },
   {
-    id: 2,
+    id: 3,
     url: "pagination/thinking/index.html",
     img: "images/website-images/thinking.png",
     title: "創意思考",
@@ -64,7 +72,7 @@ let worksdata = [
     tag: ["RWD", "動畫", "平滑滾動", "locomotive-scroll", "anime.js"]
   },
   {
-    id: 3,
+    id: 4,
     url: "pagination/financial-management/index.html",
     img: "images/website-images/financial-management-img.png",
     title: "理財工具",
@@ -72,7 +80,7 @@ let worksdata = [
     tag: ["PC端", "工具", "資料處理", "Vue.js", "Chart.js"]
   },
   {
-    id: 4,
+    id: 5,
     url: "pagination/layout-waterfall/index.html",
     img: "images/website-images/water-fall-img.png",
     title: "瀑布流",
@@ -80,13 +88,14 @@ let worksdata = [
     tag: ["Layout", "RWD", "畫廊", "無限滾動"]
   },
   {
-    id: 5,
+    id: 6,
     url: "pagination/layout-community-site/index.html",
     img: "images/website-images/community-site-img.png",
     title: "社群網站",
     description: "社群網站切板",
     tag: ["Layout", "RWD"]
   },
+
 
 ]
 

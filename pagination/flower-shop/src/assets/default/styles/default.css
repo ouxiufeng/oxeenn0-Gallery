@@ -1,0 +1,31 @@
+body {
+  margin: 0 auto;
+  max-width: 1600px;
+}
+
+*,
+*::before,
+*::after {
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  vertical-align: middle;
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Microsoft JhengHei";
+}
+
+::-moz-selection {
+  color: #fff;
+  background-color: #49c8cc;
+}
+
+::selection {
+  color: #fff;
+  background-color: #49c8cc;
+}
+
+h3,
+h4,
+p {
+  margin: 0;
+}
+/*# sourceMappingURL=default.css.map */

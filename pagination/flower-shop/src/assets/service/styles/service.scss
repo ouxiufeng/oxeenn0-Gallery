@@ -1,0 +1,109 @@
+.service-form {
+  margin-left: 40px;
+  padding: 0 10px;
+  border-left: 1px solid #eee;
+  width: 700px;
+
+  .row {
+    display: flex;
+    flex-direction: column;
+
+    .f-title {
+      font-size: 28px;
+      letter-spacing: 3px;
+      margin: 5px 0;
+    }
+
+    .f-content {
+      font-size: 24px;
+      padding: 7px;
+      border: 1px solid #555;
+      outline: none;
+      transition: all .2s 0s ease;
+      &:focus {
+        background-color: #555;
+        outline: 2px solid #4968cc;
+        color: #fff;
+      }
+    }
+
+    .gender-group {
+      font-size: 24px;
+      .gender-input {
+        appearance: none;
+      
+        border-radius: 50%;
+        width: 16px;
+        height: 16px;
+      
+        border: 1px solid #4968cc;
+        transition: 0.2s all linear;
+        outline: none;
+        margin-right: 5px;
+
+        &:checked {
+          border: 3px solid #4968cc;
+          
+          &::before {
+            content: "";
+            width: 1px;
+            height: 1px;
+            background-color: #4968cc;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            animation: checkedAnime .2s ease 0s 1 normal both;
+
+            @keyframes checkedAnime {
+              100% {
+                transform: translate(-50%, -50%) scale(8);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .submit-btn {
+      width: 120px;
+      height: 50px;
+      margin: 0 auto;
+      border: none;
+      outline: none;
+      margin-top: 70px;
+      box-shadow: 1px 1px 5px #999;
+      background-color: #4d9aff;
+      border-radius: 3px;
+      color: #fff;
+      font-size: 22px;
+      cursor: pointer;
+  
+      &:hover {
+        filter: saturate(50%);
+      }
+    }
+  }
+
+}
+
+.google-map {
+  display: flex;
+  align-items: center;
+  height: 500px;
+}
+
+.google-map-item {
+  box-shadow: 0 0 15px #555;
+}
+
+@media screen and (max-width: 1024px) {
+  .connection {
+
+    .service-form {
+      margin-left: 0;
+      width: auto;
+    }
+  }
+}

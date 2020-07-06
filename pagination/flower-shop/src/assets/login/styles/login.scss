@@ -1,0 +1,197 @@
+@mixin labelItme {
+  width: 50%;
+  font-size: 30px;
+  margin: 10px 0;
+}
+@mixin inputItem {
+  width: 50%;
+  padding: 5px 0 5px 10px;
+  font-size: 24px;
+  transition: all 0.3s 0s ease;
+  border: 1px solid #555;
+  border-radius: 10px;
+
+  &:focus {
+    outline: none;
+    border: 1px solid #4968cc;
+    border-radius: 0;
+    color: #fff;
+    background-color: #555;
+  }
+}
+
+.login-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .label-item {
+    display: flex;
+    align-items: center;
+    @include labelItme();
+
+    span {
+      font-size: 22px;
+      color: #777;
+    }
+  }
+
+  .input-item {
+    @include inputItem();
+  }
+
+  button {
+    width: 120px;
+    height: 50px;
+    border: none;
+    outline: none;
+    margin-top: 70px;
+    box-shadow: 1px 1px 5px #999;
+    background-color: #4d9aff;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+
+    &:hover {
+      filter: saturate(50%);
+    }
+  }
+}
+
+.goto-registered {
+  width: 50%;
+  margin: 0 auto;
+  text-align: right;
+  .registered-btn {
+    width: 120px;
+    height: 50px;
+    font-size: 16px;
+    color: #4968cc;
+    transform: skew(20deg);
+    border: none;
+    transition: all 0.3s 0s ease;
+    cursor: pointer;
+    outline: none;
+
+    .goto-registered-link {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      color: #4968cc;
+      transform: translate(-50%, -50%) skew(-20deg);
+      transition: all 0.1s 0s ease;
+      text-decoration: none;
+    }
+
+    &:hover {
+      transform: skew(-20deg);
+
+      .goto-registered-link {
+        transform: translate(-50%, -50%) skew(20deg);
+      }
+    }
+  }
+}
+
+.tips {
+  text-align: center;
+  width: 50%;
+  box-shadow: 1px 1px 5px #4d9aff;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 30px;
+  margin: 50px auto;
+  transition: all .3s 0s ease;
+
+  &.close {
+    opacity: 0;
+  }
+
+  .icon {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px #4d9aff;
+    transform: translate(-50%, -50%);
+    background-color: #4d9aff;
+    font-weight: bold;
+    line-height: 50px;
+
+    &::before {
+      content: "!";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-size: 22px;
+      color: #fff;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .cancel {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    cursor: pointer;
+    
+    &::before {
+      content: "X";
+      font-size: 22px;
+      color: #fff;
+      text-shadow: 1px 1px 1px #4d9aff, -1px -1px 1px #4d9aff;
+      font-weight: bold;
+    }
+  }
+
+  .text {
+    margin-top: 15px;
+    font-size: 16px;
+    color: #fff;
+    text-shadow: 1px 1px 0px #4d9aff, -1px -1px 0 #4d9aff, 1px -1px 0 #4d9aff, 1px -1px 0 #4d9aff, -1px 1px 0 #4d9aff;
+    letter-spacing: 3px;
+  }
+}
+
+.registered-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 5px;
+
+  .label-item {
+    @include labelItme();
+  }
+
+  .input-item {
+    @include inputItem();
+  }
+
+  button {
+    width: 120px;
+    height: 50px;
+    border: none;
+    outline: none;
+    margin-top: 70px;
+    box-shadow: 1px 1px 5px #999;
+    background-color: #4d9aff;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+
+    &:hover {
+      filter: saturate(50%);
+    }
+  }
+}
+
+@media screen and (max-width: 512px) {
+  .goto-registered {
+    text-align: center;
+    margin-top: 50px;
+  }
+}
