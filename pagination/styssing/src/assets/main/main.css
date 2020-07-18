@@ -1,0 +1,908 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 16px;
+  color: #555;
+}
+
+::after,
+::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 16px;
+}
+
+label {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif, "Microsoft JhengHei";
+  overflow: hidden;
+}
+
+#app {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#app .control-panel {
+  min-width: 300px;
+  max-width: 300px;
+  height: 100vh;
+  -webkit-box-shadow: 8px -20px 15px -8px #c6cad2, 8px 20px 15px -8px #c6cad2, inset -2px 0px 15px -6px #ccc;
+          box-shadow: 8px -20px 15px -8px #c6cad2, 8px 20px 15px -8px #c6cad2, inset -2px 0px 15px -6px #ccc;
+  overflow-y: auto;
+}
+
+#app .control-panel .title {
+  height: 100px;
+  font-size: 3rem;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 0 2px #555;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+#app .control-panel .control-style {
+  width: 95%;
+  margin: 0 auto;
+}
+
+#app .control-panel .control-style .style-item {
+  margin: 20px 0;
+  padding: 0 5px 20px;
+  -webkit-box-shadow: 0px 6px 6px -6px #ccc;
+          box-shadow: 0px 6px 6px -6px #ccc;
+  overflow: hidden;
+}
+
+#app .control-panel .control-style .style-item.item-hover {
+  padding: 0;
+}
+
+#app .control-panel .control-style .style-item.item-hover .hover-row {
+  padding: 0 5px;
+}
+
+#app .control-panel .control-style .style-item .sub-title {
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+
+#app .control-panel .control-style .style-item .sub-title.box-shadow-subtitle {
+  margin-left: 5px;
+}
+
+#app .control-panel .control-style .style-item .fitst-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #fff;
+}
+
+#app .control-panel .control-style .style-item .fitst-row .attr-name {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+#app .control-panel .control-style .style-item .fitst-row .fold {
+  width: 28px;
+  height: 28px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #82c1f5;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s 0s ease;
+  transition: all 0.2s 0s ease;
+}
+
+#app .control-panel .control-style .style-item .fitst-row .fold.close {
+  background-color: #f58282;
+}
+
+#app .control-panel .control-style .style-item .fitst-row .fold:hover {
+  -webkit-filter: saturate(125%);
+          filter: saturate(125%);
+}
+
+#app .control-panel .control-style .style-item .fitst-row .remove-btn {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  -webkit-transition: all 0.2s 0s ease;
+  transition: all 0.2s 0s ease;
+}
+
+#app .control-panel .control-style .style-item .fitst-row .remove-btn:hover {
+  -webkit-transform: rotateZ(90deg);
+          transform: rotateZ(90deg);
+}
+
+#app .control-panel .control-style .style-item .fitst-row .remove-btn::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotateZ(45deg);
+          transform: translate(-50%, -50%) rotateZ(45deg);
+  content: "";
+  height: 2px;
+  width: 100%;
+  background-color: #f58282;
+}
+
+#app .control-panel .control-style .style-item .fitst-row .remove-btn::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotateZ(-45deg);
+          transform: translate(-50%, -50%) rotateZ(-45deg);
+  content: "";
+  height: 2px;
+  width: 100%;
+  background-color: #f58282;
+  -webkit-box-shadow: 5px 5px 0 #fff;
+          box-shadow: 5px 5px 0 #fff;
+  border-radius: 50%;
+}
+
+#app .control-panel .control-style .style-item .body-area {
+  opacity: 1;
+  -webkit-transition: all 0.3s 0s ease;
+  transition: all 0.3s 0s ease;
+}
+
+#app .control-panel .control-style .style-item .body-area.to-width-height {
+  max-height: 100px;
+}
+
+#app .control-panel .control-style .style-item .body-area.to-margin {
+  max-height: 310px;
+}
+
+#app .control-panel .control-style .style-item .body-area.to-padding {
+  max-height: 270px;
+}
+
+#app .control-panel .control-style .style-item .body-area.to-border {
+  max-height: 1065px;
+}
+
+#app .control-panel .control-style .style-item .body-area.to-backgroung-color {
+  max-height: 50px;
+}
+
+#app .control-panel .control-style .style-item .body-area.to-box-shadow {
+  max-height: 1355px;
+}
+
+#app .control-panel .control-style .style-item .body-area.to-text-shadow {
+  max-height: 935px;
+}
+
+#app .control-panel .control-style .style-item .body-area.to-font {
+  max-height: 1215px;
+}
+
+#app .control-panel .control-style .style-item .body-area.to-transition {
+  max-height: 3230px;
+}
+
+#app .control-panel .control-style .style-item .body-area.to-hover {
+  max-height: 5785px;
+}
+
+#app .control-panel .control-style .style-item .body-area.to-hover-backgroung-color {
+  max-height: 75px;
+}
+
+#app .control-panel .control-style .style-item .body-area.to-hover-padding {
+  max-height: 310px;
+}
+
+#app .control-panel .control-style .style-item .body-area.to-hover-border {
+  max-height: 1115px;
+}
+
+#app .control-panel .control-style .style-item .body-area.close {
+  max-height: 0;
+  opacity: 0;
+  -webkit-transition: all 0.3s 0s ease;
+  transition: all 0.3s 0s ease;
+  overflow: hidden;
+}
+
+#app .control-panel .control-style .style-item .attr-valuebar {
+  position: relative;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  height: 20px;
+  width: 100%;
+  padding: 0 2px;
+  outline: none;
+  overflow: hidden;
+  border-radius: 20px;
+  -webkit-box-shadow: inset 1px 1px 5px #ccc;
+          box-shadow: inset 1px 1px 5px #ccc;
+  background-color: #eee;
+}
+
+#app .control-panel .control-style .style-item .attr-valuebar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+          appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  background-color: #fff;
+  -webkit-box-shadow: -300px 0 0 290px #bcc5f6, 0px 0px 5px 3px #ccc;
+          box-shadow: -300px 0 0 290px #bcc5f6, 0px 0px 5px 3px #ccc;
+  -webkit-transition: all 0.2s 0s ease;
+  transition: all 0.2s 0s ease;
+}
+
+#app .control-panel .control-style .style-item .attr-valuebar::-webkit-slider-thumb:hover {
+  background-color: #f0f0f0;
+  -webkit-box-shadow: -300px 0 0 290px #6e81e2, 0px 0px 5px 3px #ccc;
+          box-shadow: -300px 0 0 290px #6e81e2, 0px 0px 5px 3px #ccc;
+}
+
+#app .control-panel .control-style .style-item .attr-value-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#app .control-panel .control-style .style-item .attr-value-item select {
+  margin-bottom: 10px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+#app .control-panel .control-style .style-item .attr-value {
+  width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#app .control-panel .control-style .style-item .box-shadow-item p {
+  margin: 0 0 10px;
+  text-align: center;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #ccc;
+}
+
+#app .control-panel .control-style .style-item .box-shadow-item .box-shadow-type-btn-grouop {
+  margin: 10px 0;
+  text-align: center;
+}
+
+#app .control-panel .control-style .style-item .box-shadow-item .box-shadow-type-btn-grouop .box-shadow-type-btn {
+  width: 45%;
+  height: 30px;
+  margin: 0 5px;
+  border: none;
+  outline: none;
+  background-color: #f58282;
+  -webkit-box-shadow: 5px 3px 1px #ccc;
+          box-shadow: 5px 3px 1px #ccc;
+  cursor: pointer;
+  -webkit-transition: all 0.2s 0s ease;
+  transition: all 0.2s 0s ease;
+}
+
+#app .control-panel .control-style .style-item .box-shadow-item .box-shadow-type-btn-grouop .box-shadow-type-btn.focus {
+  background-color: #82c1f5;
+}
+
+#app .control-panel .control-style .style-item .box-shadow-item .box-shadow-type-btn-grouop .box-shadow-type-btn:hover {
+  -webkit-box-shadow: 1px 1px 1px #ccc;
+          box-shadow: 1px 1px 1px #ccc;
+}
+
+#app .control-panel .control-style .style-item .switch-item {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 100%;
+  height: 30px;
+  background-color: #f58282;
+  margin: 5px 0;
+  -webkit-box-shadow: 5px 3px 1px #ccc;
+          box-shadow: 5px 3px 1px #ccc;
+  text-align: center;
+  line-height: 2rem;
+  outline: none;
+  -webkit-transition: all 0.2s 0s ease;
+  transition: all 0.2s 0s ease;
+  cursor: pointer;
+  display: block;
+}
+
+#app .control-panel .control-style .style-item .switch-item input {
+  opacity: 0;
+  display: none;
+}
+
+#app .control-panel .control-style .style-item .switch-item.ishover {
+  margin: 10px 0;
+}
+
+#app .control-panel .control-style .style-item .switch-item.widthauto::before {
+  content: "Width Auto: OFF";
+}
+
+#app .control-panel .control-style .style-item .switch-item.heightauto::before {
+  content: "Height Auto: OFF";
+}
+
+#app .control-panel .control-style .style-item .switch-item.margin-range::before {
+  content: "Margin range: OFF";
+}
+
+#app .control-panel .control-style .style-item .switch-item.lineheight-type::before {
+  content: "Line height keyword: OFF";
+}
+
+#app .control-panel .control-style .style-item .switch-item.inlinesize-type::before {
+  content: "Inline size keyword: OFF";
+}
+
+#app .control-panel .control-style .style-item .switch-item.ishover::before {
+  content: "hover: OFF";
+}
+
+#app .control-panel .control-style .style-item .switch-item:hover {
+  -webkit-box-shadow: 1px 1px 1px #ccc;
+          box-shadow: 1px 1px 1px #ccc;
+}
+
+#app .control-panel .control-style .style-item .switch-item:active {
+  -webkit-box-shadow: inset 1px 1px 1px #ccc;
+          box-shadow: inset 1px 1px 1px #ccc;
+}
+
+#app .control-panel .control-style .style-item .switch-item:active::before {
+  -webkit-transition: all 0.2s 0s ease;
+  transition: all 0.2s 0s ease;
+  color: transparent;
+}
+
+#app .control-panel .control-style .style-item .switch-item.open {
+  background-color: #82c1f5;
+  -webkit-box-shadow: inset 0 0 3px #ccc;
+          box-shadow: inset 0 0 3px #ccc;
+  -webkit-transition: all 0.2s 0s ease;
+  transition: all 0.2s 0s ease;
+}
+
+#app .control-panel .control-style .style-item .switch-item.open.widthauto::before {
+  content: "Width Auto: ON";
+}
+
+#app .control-panel .control-style .style-item .switch-item.open.heightauto::before {
+  content: "Height Auto: ON";
+}
+
+#app .control-panel .control-style .style-item .switch-item.open.margin-range::before {
+  content: "Margin range: ON";
+}
+
+#app .control-panel .control-style .style-item .switch-item.open.lineheight-type::before {
+  content: "Line height keyword: ON";
+}
+
+#app .control-panel .control-style .style-item .switch-item.open.inlinesize-type::before {
+  content: "Inline size keyword: ON";
+}
+
+#app .control-panel .control-style .style-item .switch-item.open.ishover::before {
+  content: "hover: ON";
+}
+
+#app .control-panel .control-style .style-item .switch-item.open:active {
+  -webkit-box-shadow: inset 1px 1px 1px #ccc;
+          box-shadow: inset 1px 1px 1px #ccc;
+}
+
+#app .control-panel .control-style .style-item .switch-item.open:active::before {
+  -webkit-transition: all 0.2s 0s ease;
+  transition: all 0.2s 0s ease;
+  color: transparent;
+}
+
+#app .control-panel .control-style .style-item .select-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 5px 0;
+}
+
+#app .control-panel .control-style .style-item .select-group .select-item {
+  text-align: center;
+  margin: 3px;
+}
+
+#app .control-panel .control-style .style-item .select-group .select-item.full {
+  width: 100%;
+}
+
+#app .control-panel .control-style .style-item .select-group .select-item.full select {
+  width: 100%;
+}
+
+#app .control-panel .control-style .style-item .select-group .select-item select {
+  background: #eee;
+  outline: none;
+  border: none;
+  height: 30px;
+  -webkit-box-shadow: inset 1px 1px 5px #ccc;
+          box-shadow: inset 1px 1px 5px #ccc;
+}
+
+#app .control-panel .control-style .style-item .select-group .select-item select.shorthand {
+  background-color: #f5da82;
+}
+
+#app .control-panel .control-style .style-item .add-item {
+  position: relative;
+  width: 100%;
+  height: 30px;
+  margin: 5px 0;
+  background-color: #82f591;
+  -webkit-box-shadow: 5px 3px 1px #ccc;
+          box-shadow: 5px 3px 1px #ccc;
+  -webkit-transition: all 0.2s 0s ease;
+  transition: all 0.2s 0s ease;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+#app .control-panel .control-style .style-item .add-item.disable {
+  background-color: #f58282;
+}
+
+#app .control-panel .control-style .style-item .add-item.disable::before {
+  content: "Full";
+}
+
+#app .control-panel .control-style .style-item .add-item::before {
+  content: "Add";
+  font-size: 1.2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  letter-spacing: 0.1rem;
+  -webkit-transition: all 0.2s 0s ease;
+  transition: all 0.2s 0s ease;
+}
+
+#app .control-panel .control-style .style-item .add-item:hover {
+  -webkit-box-shadow: 1px 1px 1px #ccc;
+          box-shadow: 1px 1px 1px #ccc;
+}
+
+#app .control-panel .control-style .style-item .add-item:hover::before {
+  letter-spacing: 0.1px;
+}
+
+#app .control-panel .control-style .style-item .add-item:active {
+  -webkit-box-shadow: inset 0px 0px 5px #ccc;
+          box-shadow: inset 0px 0px 5px #ccc;
+}
+
+#app .control-panel .control-style .style-item .add-item:active::before {
+  letter-spacing: -1.9px;
+}
+
+#app .control-panel .control-style .style-item .color-group .color-item {
+  display: none;
+}
+
+#app .control-panel .control-style .style-item .color-group .color-item.open {
+  display: block;
+}
+
+#app .control-panel .control-style .style-item .pickr {
+  margin: 5px 3px;
+}
+
+#app .control-panel .control-style .style-item .pickr .pcr-button {
+  width: 100%;
+  -webkit-transition: -webkit-box-shadow 0.3s 0s ease !important;
+  transition: -webkit-box-shadow 0.3s 0s ease !important;
+  transition: box-shadow 0.3s 0s ease !important;
+  transition: box-shadow 0.3s 0s ease, -webkit-box-shadow 0.3s 0s ease !important;
+}
+
+#app .control-panel .control-style .style-item .pickr .pcr-button::after {
+  -webkit-box-shadow: 1px 1px 5px #ccc;
+          box-shadow: 1px 1px 5px #ccc;
+}
+
+#app .right-area {
+  width: 100%;
+  height: 100vh;
+}
+
+#app .right-area .type-panel {
+  height: 100px;
+  -webkit-box-shadow: 0px 10px 15px -9px #c6cad2, inset -7px 3px 15px -3px #eee;
+          box-shadow: 0px 10px 15px -9px #c6cad2, inset -7px 3px 15px -3px #eee;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app .right-area .type-panel .type-group {
+  width: 100%;
+}
+
+#app .right-area .type-panel .type-group .type-item {
+  display: inline-block;
+  padding: 20px 30px;
+  border-radius: 20px;
+  -webkit-box-shadow: 0 0 3px #555;
+          box-shadow: 0 0 3px #555;
+  -webkit-filter: drop-shadow(10px 10px 2px #ccc);
+          filter: drop-shadow(10px 10px 2px #ccc);
+  margin: 0 20px;
+  letter-spacing: 0.1rem;
+  -webkit-transition: all 0.2s 0s ease;
+  transition: all 0.2s 0s ease;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  text-decoration: none;
+}
+
+#app .right-area .type-panel .type-group .type-item:active {
+  padding: 19px 29px;
+  -webkit-filter: drop-shadow(5px 5px 2px #ccc);
+          filter: drop-shadow(5px 5px 2px #ccc);
+}
+
+#app .right-area .right-bottom-block {
+  height: calc(100vh - 100px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#app .right-area .right-bottom-block .show-panel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+#app .right-area .right-bottom-block .show-panel .show-target {
+  position: relative;
+  font-size: 2rem;
+  border: 1px solid;
+  cursor: pointer;
+}
+
+#app .right-area .right-bottom-block .show-panel .show-target .support-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px dashed #ccc;
+}
+
+#app .right-area .right-bottom-block .setting-panel {
+  min-width: 100px;
+  padding-bottom: 5vh;
+  -webkit-box-shadow: 0 4px 15px -8px #c6cad2, -6px -4px 10px -8px #c6cad2, inset 8px 8px 8px -6px #ccc;
+          box-shadow: 0 4px 15px -8px #c6cad2, -6px -4px 10px -8px #c6cad2, inset 8px 8px 8px -6px #ccc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app .right-area .right-bottom-block .setting-panel button {
+  position: relative;
+  margin: 10px 0;
+  padding: 25px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  -webkit-box-shadow: 0 0 5px #666;
+          box-shadow: 0 0 5px #666;
+  -webkit-filter: drop-shadow(5px 5px 1px #ccc);
+          filter: drop-shadow(5px 5px 1px #ccc);
+  cursor: pointer;
+  -webkit-transition: all 0.1s 0s ease;
+  transition: all 0.1s 0s ease;
+}
+
+#app .right-area .right-bottom-block .setting-panel button:active {
+  padding: 23px;
+}
+
+#app .right-area .right-bottom-block .setting-panel .code-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  width: 10px;
+  height: 10px;
+  border-top: 3px solid #666;
+  border-left: 3px solid #666;
+  -webkit-transform: translate(-50%, -50%) rotateZ(-45deg);
+          transform: translate(-50%, -50%) rotateZ(-45deg);
+}
+
+#app .right-area .right-bottom-block .setting-panel .code-btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  width: 10px;
+  height: 10px;
+  border-bottom: 3px solid #666;
+  border-right: 3px solid #666;
+  -webkit-transform: translate(-50%, -50%) rotateZ(-45deg);
+          transform: translate(-50%, -50%) rotateZ(-45deg);
+}
+
+#app .right-area .right-bottom-block .setting-panel .about-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border: 3px solid #666;
+  border-radius: 50%;
+}
+
+#app .right-area .right-bottom-block .setting-panel .about-btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background-color: #666;
+  border-radius: 50%;
+}
+
+#app .right-area .code-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 500px;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  -webkit-box-shadow: -1px 0 5px #ccc;
+          box-shadow: -1px 0 5px #ccc;
+  -webkit-transition: all 0.3s 0s ease;
+  transition: all 0.3s 0s ease;
+  -webkit-transform: translateX(500px);
+          transform: translateX(500px);
+  text-align: center;
+}
+
+#app .right-area .code-panel.open {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+#app .right-area .code-panel .show-code {
+  width: 100%;
+  height: 80vh;
+  margin: 3vh 0;
+  border: none;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  font-size: 1rem;
+  line-height: 2rem;
+  padding: 1rem;
+  background-color: transparent;
+  outline: none;
+  resize: none;
+}
+
+#app .right-area .code-panel .fold-btn {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  -webkit-box-shadow: inset -1px 1px 5px #ccc;
+          box-shadow: inset -1px 1px 5px #ccc;
+  cursor: pointer;
+}
+
+#app .right-area .code-panel .fold-btn:hover::before {
+  -webkit-transform: translate(-50%, -50%) rotateZ(135deg);
+          transform: translate(-50%, -50%) rotateZ(135deg);
+}
+
+#app .right-area .code-panel .fold-btn:active::before {
+  border-top: 3px solid #fafafa;
+  border-left: 3px solid #fafafa;
+}
+
+#app .right-area .code-panel .fold-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border-top: 3px solid #666;
+  border-left: 3px solid #666;
+  -webkit-transform: translate(-50%, -50%) rotateZ(-45deg);
+          transform: translate(-50%, -50%) rotateZ(-45deg);
+  -webkit-transition: all 0.2s 0s ease;
+  transition: all 0.2s 0s ease;
+}
+
+#app .right-area .about-panel {
+  padding-top: 15vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 500px;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  -webkit-box-shadow: -1px 0 5px #ccc;
+          box-shadow: -1px 0 5px #ccc;
+  -webkit-transition: all 0.3s 0s ease;
+  transition: all 0.3s 0s ease;
+  -webkit-transform: translateX(500px);
+          transform: translateX(500px);
+  text-align: center;
+}
+
+#app .right-area .about-panel.open {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+#app .right-area .about-panel .author,
+#app .right-area .about-panel .version {
+  position: relative;
+  margin: 5vh 0;
+}
+
+#app .right-area .about-panel .author::before,
+#app .right-area .about-panel .version::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #e6e6e6;
+  border-radius: 0 50%;
+  width: 80%;
+  height: 1px;
+}
+
+#app .right-area .about-panel h3 {
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+  font-weight: normal;
+}
+
+#app .right-area .about-panel h3 a {
+  text-decoration: none;
+  font-size: inherit;
+  -webkit-transition: all .1s 0s ease;
+  transition: all .1s 0s ease;
+}
+
+#app .right-area .about-panel h3 a:hover {
+  color: #bcc5f6;
+  letter-spacing: .2rem;
+}
+
+#app .right-area .about-panel .fold-btn {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  -webkit-box-shadow: inset -1px 1px 5px #ccc;
+          box-shadow: inset -1px 1px 5px #ccc;
+  cursor: pointer;
+}
+
+#app .right-area .about-panel .fold-btn:hover::before {
+  -webkit-transform: translate(-50%, -50%) rotateZ(135deg);
+          transform: translate(-50%, -50%) rotateZ(135deg);
+}
+
+#app .right-area .about-panel .fold-btn:active::before {
+  border-top: 3px solid #fafafa;
+  border-left: 3px solid #fafafa;
+}
+
+#app .right-area .about-panel .fold-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border-top: 3px solid #666;
+  border-left: 3px solid #666;
+  -webkit-transform: translate(-50%, -50%) rotateZ(-45deg);
+          transform: translate(-50%, -50%) rotateZ(-45deg);
+  -webkit-transition: all 0.2s 0s ease;
+  transition: all 0.2s 0s ease;
+}
+/*# sourceMappingURL=main.css.map */
