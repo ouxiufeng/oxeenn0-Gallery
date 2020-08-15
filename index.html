@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 
 <head>
   <meta charset="UTF-8">
@@ -7,6 +7,8 @@
   <title>Oxeenn0 - 前端作品集</title>
   <meta name="description" content="個人前端實驗作品存放區，不定期更新。">
   <meta name="robots" content="follow,index">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://oxeenn0.com/images/avatar.png">
   <link rel="stylesheet" href="styles/oxeenn.css">
   <link rel="icon" href="images/oxeenn0TitleIcon.ico">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -26,7 +28,7 @@
         </ul>
       </div>
     </header>
-    
+
     <main id="main">
       <section id="works" :class="[moreWorksAnime ? 'more-works-anime' : '', moreWork ? 'more-works' : '']">
         <div class="works-group" v-for="works in worksDatadisplay" :key="works.id">
@@ -56,8 +58,10 @@
       <div class="contact">
         <h2>聯絡我</h2>
         <div class="link-group">
-          <div class="link-item"><a id="email" href="mailto:ouxiufeng@outlook.com"><span class="material-icons">email</span></a></div>
-          <div class="link-item"><a id="github" href="https://github.com/ouxiufeng/oxeenn0-Gallery" target="_blank"><img id="github-icon" src="images/github.svg" alt="github"></a></div>
+          <div class="link-item"><a id="email" href="mailto:ouxiufeng@outlook.com"><span
+                class="material-icons">email</span></a></div>
+          <div class="link-item"><a id="github" href="https://github.com/ouxiufeng/oxeenn0-Gallery" target="_blank"><img
+                id="github-icon" src="images/github.svg" alt="github"></a></div>
         </div>
         <p></p>
       </div>
