@@ -4,6 +4,32 @@ let goheaderButton = document.getElementById("goheader");
 let gofooterButton = document.getElementById("gofooter");
 let beforePosYcounter = 0;
 let beforePosY = 0;
+const env = 'production' //production || developoment;
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('sw.js')
+      .then(reg => {
+        if(env === 'development') {
+          console.log('Service worker registered!', reg);
+        }
+      })
+      .catch(err => {
+        if(env === 'development') {
+          console.log('Service worker unregistered!', err);
+        }
+      })
+
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if(env === 'development') {
+        console.log("the service worker is change.");
+      }
+      if(window.confirm("網站版本已更新，是否要立即更新或是下次重新啟動時更新。")){
+        window.location.reload();
+      }
+    })
+  })
+}
 
 let anchorSmooth = function (clickButton, target) {
   clickButton.addEventListener("click", function () {
@@ -45,7 +71,6 @@ addEventListener("scroll", function () {
   beforePosYcounter++
 }, false)
 
-
 let worksdata = [
   {
     id: 1,
@@ -77,7 +102,7 @@ let worksdata = [
     img: "images/website-images/cube-shop-img.png",
     title: "方塊商店",
     description: "動畫實驗網站。",
-    tag: ["動畫", "過渡", "RWD", "anime.js", "three.js"]
+    tag: ["動畫", "過渡", "anime.js", "three.js"]
   },
   {
     id: 5,
@@ -170,3 +195,4 @@ let vm = new Vue({
   }
 
 })
+

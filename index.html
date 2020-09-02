@@ -13,10 +13,35 @@
   <link rel="icon" href="images/oxeenn0TitleIcon.ico">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&display=swap" rel="stylesheet">
+  <link rel="manifest" href="manifest.json">
+
+  <meta name="msapplication-TileImage" content="/images/icons/icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#4d90fe">
+  <meta name="msapplication-navbutton-color" content="#4d90fe">
+  
+  <meta name="theme-color" content="#4d90fe">
+
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="oxeenn0">
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/images/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/images/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/images/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/images/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/images/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-icon-180x180.png">
 </head>
 
 <body>
   <div id="container">
+
+    <!-- <div id="mask"></div> -->
 
     <header id="header">
       <div class="LOGO">Oxeenn<span>0</span></div>
@@ -33,6 +58,9 @@
       <section id="works" :class="[moreWorksAnime ? 'more-works-anime' : '', moreWork ? 'more-works' : '']">
         <div class="works-group" v-for="works in worksDatadisplay" :key="works.id">
           <div class="works-item">
+            <div class="img-mask">
+              <p class="img-mask-text">網站示圖</p>
+            </div>
             <a :href="works.url" target="_blank">
               <img :src="works.img" alt="網頁作品">
             </a>
@@ -72,7 +100,8 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
-  <script src="scripts/oxeenn.js"></script>
+  <script src="main.js"></script>
+  <script src="intersectionObserver.js"></script>
 </body>
 
 </html>
