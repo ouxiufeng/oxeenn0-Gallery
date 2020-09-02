@@ -176,6 +176,14 @@ let vm = new Vue({
         }
       }, 500)
       this.clearMoreWorkAnime(true)
+    },
+    clickTagOffImgMask: function () {
+      setTimeout(() => {
+        const worksItem = document.querySelectorAll('.works-item .img-mask');
+        for (const item of worksItem) {
+          item.style.display = 'none';
+        }
+      }, 600)
     }
 
   },

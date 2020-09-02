@@ -70,7 +70,7 @@
             </div>
           </div>
           <div class="works-tag-group">
-            <button class="works-tag-item" v-for="(tag, index) in works.tag" :key="index" v-on:click="tagSearch(tag)"
+            <button class="works-tag-item" v-for="(tag, index) in works.tag" :key="index" v-on:click="{tagSearch(tag), clickTagOffImgMask()}"
               :disabled="disabled">{{tag}}</button>
           </div>
         </div>

@@ -48,9 +48,3 @@ function offImgMaskWithUpdate() {
     offImgMask();
   }, upodateDataEndTime);
 }
-
-
-
-
-
-

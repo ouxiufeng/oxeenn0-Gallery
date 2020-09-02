@@ -1,7 +1,5 @@
 const env = 'production'; //production || developoment;
-const cacheName = 'cache-v001';
-const oldCacheName = '';
-const twoVersion = 2;
+const cacheName = 'cache-v002';
 const precacheResources = [
   'index.html',
   'main.js',
@@ -28,17 +26,16 @@ self.addEventListener('install', event => {
       }),
 
     caches.keys()
-      .then(cacheName => {
-        if (cacheName.length == twoVersion) {
-          if (env === 'development') {
-            console.log(cacheName);
+      .then(cacheNameArr => {
+        let oldCacheVersion = cacheNameArr.filter(item => item !== cacheName);
+        if (oldCacheVersion.length !== 0) {
+          for (const cache of oldCacheVersion) {
+            caches.delete(cache);
           }
-          caches.delete(oldCacheName);
           self.skipWaiting();
         }
       })
   );
-
 });
 
 self.addEventListener('activate', event => {
