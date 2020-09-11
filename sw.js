@@ -1,5 +1,5 @@
 const env = 'production'; //production || developoment;
-const cacheName = 'cache-v002';
+const cacheName = 'cache-v003';
 const precacheResources = [
   'index.html',
   'main.js',
@@ -12,6 +12,7 @@ const precacheResources = [
   'images/website-images/styeeings-img.png',
   'images/website-images/styssing-img.png',
   'images/website-images/thinking.png',
+  'images/website-images/theater-img.png',
 ];
 
 self.addEventListener('install', event => {

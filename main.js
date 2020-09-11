@@ -98,6 +98,14 @@ let worksdata = [
   },
   {
     id: 4,
+    url: "pagination/theater/dist/index.html",
+    img: "images/website-images/theater-img.png",
+    title: "Theater",
+    description: "Transition art.",
+    tag: ["動畫", "過渡", "Vue CLI", "PC端"]
+  },
+  {
+    id: 5,
     url: "pagination/cube-shop/index.html",
     img: "images/website-images/cube-shop-img.png",
     title: "方塊商店",
@@ -105,7 +113,7 @@ let worksdata = [
     tag: ["動畫", "過渡", "anime.js", "three.js"]
   },
   {
-    id: 5,
+    id: 6,
     url: "pagination/thinking/index.html",
     img: "images/website-images/thinking.png",
     title: "創意思考",
@@ -113,7 +121,7 @@ let worksdata = [
     tag: ["RWD", "動畫", "平滑滾動", "locomotive-scroll", "anime.js"]
   },
   {
-    id: 6,
+    id: 7,
     url: "pagination/financial-management/index.html",
     img: "images/website-images/financial-management-img.png",
     title: "理財工具",
