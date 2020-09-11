@@ -10,21 +10,21 @@ if ('serviceWorker' in navigator) {
   window.addEventListener('load', function () {
     navigator.serviceWorker.register('sw.js')
       .then(reg => {
-        if(env === 'development') {
+        if (env === 'development') {
           console.log('Service worker registered!', reg);
         }
       })
       .catch(err => {
-        if(env === 'development') {
+        if (env === 'development') {
           console.log('Service worker unregistered!', err);
         }
       })
 
     navigator.serviceWorker.addEventListener('controllerchange', () => {
-      if(env === 'development') {
+      if (env === 'development') {
         console.log("the service worker is change.");
       }
-      if(window.confirm("網站版本已更新，是否要立即更新或是下次重新啟動時更新。")){
+      if (window.confirm("網站版本已更新，是否要立即更新或是下次重新啟動時更新。")) {
         window.location.reload();
       }
     })

@@ -4,6 +4,29 @@
   </div>
 </template>
 
+<script>
+export default {
+  methods: {
+    checkDevice() {
+      if (
+        navigator.userAgent.match(/Android/i) ||
+        navigator.userAgent.match(/webOS/i) ||
+        navigator.userAgent.match(/iPhone/i) ||
+        navigator.userAgent.match(/iPad/i) ||
+        navigator.userAgent.match(/iPod/i) ||
+        navigator.userAgent.match(/BlackBerry/i) ||
+        navigator.userAgent.match(/Windows Phone/i)
+      ) {
+        return alert("此應用不建議在行動裝置上執行!");
+      }
+    }
+  },
+  mounted() {
+    this.checkDevice();
+  }
+};
+</script>
+
 <style lang="scss">
 * {
   user-select: none;

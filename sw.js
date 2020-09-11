@@ -1,5 +1,5 @@
 const env = 'production'; //production || developoment;
-const cacheName = 'cache-v003';
+const cacheName = 'cache-v004';
 const precacheResources = [
   'index.html',
   'main.js',
