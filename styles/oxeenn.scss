@@ -1,5 +1,5 @@
 * {
-  font-family: "Open Sans Condensed", monospace, "Microsoft JhengHei";
+  font-family: "Microsoft JhengHei", "Open Sans Condensed", monospace;
   // scroll-behavior: smooth;
 }
 
@@ -70,10 +70,10 @@ body {
       font-size: 30px;
       letter-spacing: 0.1em;
       margin-left: 5vw;
+      font-family: "Open Sans Condensed", monospace, "Microsoft JhengHei";
 
       span {
         font-size: 37px;
-        font-family: monospace, "Microsoft JhengHei";
       }
     }
 
@@ -88,6 +88,7 @@ body {
           margin-right: 40px;
           transition: all 0.3s 0s ease;
           overflow: hidden;
+          display: none;
 
           &::before {
             content: "";
@@ -131,7 +132,7 @@ body {
     margin: auto;
     #works {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       flex-wrap: wrap;
 
       &.more-works-anime {
@@ -152,7 +153,7 @@ body {
 
       &.more-works {
         .works-group {
-          width: 30%;
+          width: 33%;
 
           .works-item {
             height: 500px;
@@ -241,8 +242,10 @@ body {
           justify-content: flex-end;
           background-color: #fff;
           box-shadow: 0 0 5px #333;
+          overflow-y: auto;
 
           .works-tag-item {
+            min-width: fit-content;
             padding: 5px;
             margin: 5px 5px 5px 0;
             border-radius: 5px;
@@ -350,11 +353,10 @@ body {
     #main {
       width: 100%;
       #works {
-        
-        margin: 0 10px;
+        margin: 0 25%;
         &.more-works {
           .works-group {
-            width: 70%;
+            width: 100%;
 
             .works-item {
               height: 600px;
@@ -363,7 +365,7 @@ body {
         }
 
         .works-group {
-          width: 70%;
+          width: 100%;
 
           .works-item {
             width: 100%;
@@ -392,7 +394,7 @@ body {
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 576px) {
   #container {
     #header {
       flex-direction: column;
@@ -410,6 +412,7 @@ body {
 
     #main {
       #works {
+        margin: 0 10px;
         &.more-works {
           .works-group {
             width: 100%;

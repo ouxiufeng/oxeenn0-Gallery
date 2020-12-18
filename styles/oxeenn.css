@@ -1,5 +1,5 @@
 * {
-  font-family: "Open Sans Condensed", monospace, "Microsoft JhengHei";
+  font-family: "Microsoft JhengHei", "Open Sans Condensed", monospace;
 }
 
 html,
@@ -88,11 +88,11 @@ body {
   font-size: 30px;
   letter-spacing: 0.1em;
   margin-left: 5vw;
+  font-family: "Open Sans Condensed", monospace, "Microsoft JhengHei";
 }
 
 #container #header .LOGO span {
   font-size: 37px;
-  font-family: monospace, "Microsoft JhengHei";
 }
 
 #container #header .menu {
@@ -112,6 +112,7 @@ body {
   -webkit-transition: all 0.3s 0s ease;
   transition: all 0.3s 0s ease;
   overflow: hidden;
+  display: none;
 }
 
 #container #header .menu .menu-group .menu-item::before {
@@ -155,9 +156,9 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -192,7 +193,7 @@ body {
 }
 
 #container #main #works.more-works .works-group {
-  width: 30%;
+  width: 33%;
 }
 
 #container #main #works.more-works .works-group .works-item {
@@ -310,9 +311,13 @@ body {
   background-color: #fff;
   -webkit-box-shadow: 0 0 5px #333;
           box-shadow: 0 0 5px #333;
+  overflow-y: auto;
 }
 
 #container #main #works .works-group .works-tag-group .works-tag-item {
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
   padding: 5px;
   margin: 5px 5px 5px 0;
   border-radius: 5px;
@@ -441,16 +446,16 @@ body {
     width: 100%;
   }
   #container #main #works {
-    margin: 0 10px;
+    margin: 0 25%;
   }
   #container #main #works.more-works .works-group {
-    width: 70%;
+    width: 100%;
   }
   #container #main #works.more-works .works-group .works-item {
     height: 600px;
   }
   #container #main #works .works-group {
-    width: 70%;
+    width: 100%;
   }
   #container #main #works .works-group .works-item {
     width: 100%;
@@ -472,7 +477,7 @@ body {
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 576px) {
   #container #header {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -481,6 +486,9 @@ body {
   }
   #container #header .menu .menu-group .menu-item a {
     font-size: 30px;
+  }
+  #container #main #works {
+    margin: 0 10px;
   }
   #container #main #works.more-works .works-group {
     width: 100%;

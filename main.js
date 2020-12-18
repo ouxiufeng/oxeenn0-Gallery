@@ -74,30 +74,38 @@ addEventListener("scroll", function () {
 let worksdata = [
   {
     id: 1,
+    url: "https://crowd-project.herokuapp.com/",
+    img: "images/website-images/crowd-project-img.png",
+    title: "Crowd project",
+    description: "即時通訊實驗項目。\n(展示帳戶: 123456 展示密碼: 12345678)",
+    tag: ["Vue CLI", "Firebase"]
+  },
+  {
+    id: 2,
     url: "pagination/flower-shop/dist/index.html",
     img: "images/website-images/flower-shop-img.png",
     title: "花店",
     description: "電商平台(無後端)。",
-    tag: ["電商", "Vue CLI", "RWD", "anime.js", "Swiper", "Masonry"]
+    tag: ["Vue CLI", "anime.js", "Swiper", "Masonry"]
   },
   {
-    id: 2,
+    id: 3,
     url: "https://styeeings.herokuapp.com/",
     img: "images/website-images/styeeings-img.png",
     title: "StyeeingS",
     description: "CSS libraries.",
-    tag: ["Nuxt.js", "RWD", "libraries"]
+    tag: ["Nuxt.js", "libraries"]
   },
   {
-    id: 3,
+    id: 4,
     url: "pagination/styssing/dist/index.html",
     img: "images/website-images/styssing-img.png",
     title: "Styssing(Beta)",
     description: "視覺化操作界面，快速創建和測試基本按鈕。",
-    tag: ["Vue CLI", "PC端", "工具", "Simonwep/pickr", "測試版"]
+    tag: ["Vue CLI", "PC端", "Simonwep/pickr"]
   },
   {
-    id: 4,
+    id: 5,
     url: "pagination/theater/dist/index.html",
     img: "images/website-images/theater-img.png",
     title: "Theater",
@@ -105,7 +113,7 @@ let worksdata = [
     tag: ["動畫", "過渡", "Vue CLI", "PC端"]
   },
   {
-    id: 5,
+    id: 6,
     url: "pagination/cube-shop/index.html",
     img: "images/website-images/cube-shop-img.png",
     title: "方塊商店",
@@ -113,20 +121,20 @@ let worksdata = [
     tag: ["動畫", "過渡", "anime.js", "three.js"]
   },
   {
-    id: 6,
+    id: 7,
     url: "pagination/thinking/index.html",
     img: "images/website-images/thinking.png",
     title: "創意思考",
     description: "動畫實驗網站。",
-    tag: ["RWD", "動畫", "平滑滾動", "locomotive-scroll", "anime.js"]
+    tag: ["動畫", "locomotive-scroll", "anime.js"]
   },
   {
-    id: 7,
+    id: 8,
     url: "pagination/financial-management/index.html",
     img: "images/website-images/financial-management-img.png",
     title: "理財工具",
     description: "電腦版理財網站。",
-    tag: ["PC端", "工具", "資料處理", "Vue.js", "Chart.js"]
+    tag: ["PC端", "工具", "Vue.js", "Chart.js"]
   },
 
 
