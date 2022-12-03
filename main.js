@@ -72,32 +72,18 @@ addEventListener("scroll", function () {
 }, false)
 
 let worksdata = [
+
   {
     id: 1,
-    url: "https://crowd-project.herokuapp.com/",
-    img: "images/website-images/crowd-project-img.png",
-    title: "Crowd project",
-    description: "即時通訊實驗項目。\n(展示帳戶: 123456 展示密碼: 12345678)",
-    tag: ["Vue CLI", "Firebase"]
-  },
-  {
-    id: 2,
     url: "pagination/flower-shop/dist/index.html",
     img: "images/website-images/flower-shop-img.png",
     title: "花店",
     description: "電商平台(無後端)。",
     tag: ["Vue CLI", "anime.js", "Swiper", "Masonry"]
   },
+
   {
-    id: 3,
-    url: "https://styeeings.herokuapp.com/",
-    img: "images/website-images/styeeings-img.png",
-    title: "StyeeingS",
-    description: "CSS libraries.",
-    tag: ["Nuxt.js", "libraries"]
-  },
-  {
-    id: 4,
+    id: 2,
     url: "pagination/styssing/dist/index.html",
     img: "images/website-images/styssing-img.png",
     title: "Styssing(Beta)",
@@ -105,7 +91,7 @@ let worksdata = [
     tag: ["Vue CLI", "PC端", "Simonwep/pickr"]
   },
   {
-    id: 5,
+    id: 3,
     url: "pagination/theater/dist/index.html",
     img: "images/website-images/theater-img.png",
     title: "Theater",
@@ -113,7 +99,7 @@ let worksdata = [
     tag: ["動畫", "過渡", "Vue CLI", "PC端"]
   },
   {
-    id: 6,
+    id: 4,
     url: "pagination/cube-shop/index.html",
     img: "images/website-images/cube-shop-img.png",
     title: "方塊商店",
@@ -121,7 +107,7 @@ let worksdata = [
     tag: ["動畫", "過渡", "anime.js", "three.js"]
   },
   {
-    id: 7,
+    id: 5,
     url: "pagination/thinking/index.html",
     img: "images/website-images/thinking.png",
     title: "創意思考",
@@ -129,12 +115,36 @@ let worksdata = [
     tag: ["動畫", "locomotive-scroll", "anime.js"]
   },
   {
-    id: 8,
+    id: 6,
     url: "pagination/financial-management/index.html",
     img: "images/website-images/financial-management-img.png",
     title: "理財工具",
     description: "電腦版理財網站。",
     tag: ["PC端", "工具", "Vue.js", "Chart.js"]
+  },
+  {
+    id: 7,
+    url: "pagination/exhibition-hall/index.html",
+    img: "images/website-images/exhibition-hall-image.png",
+    title: "Exhibition hall",
+    description: "展示網站動畫版",
+    tag: ["動畫", "Vue CLI"]
+  },
+  {
+    id: 8,
+    url: "https://crowd-project.herokuapp.com/",
+    img: "images/website-images/crowd-project-img.png",
+    title: "Crowd project",
+    description: "即時通訊實驗項目。\n(展示帳戶: 123456 展示密碼: 12345678)",
+    tag: ["Vue CLI", "Firebase"]
+  },
+  {
+    id: 9,
+    url: "https://styeeings.herokuapp.com/",
+    img: "images/website-images/styeeings-img.png",
+    title: "StyeeingS",
+    description: "CSS libraries.",
+    tag: ["Nuxt.js", "libraries"]
   },
 
 
